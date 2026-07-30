@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20-Week Training &amp; Nutrition Plan</title>
+<style>
+  :root {
+    --bg:#faf9f7; --text:#1a1a1a; --muted:#666; --border:#e8e4df; --card:#fff;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:var(--bg); color:var(--text); padding:20px 14px 60px; font-size:13px; line-height:1.5; }
+  h1 { font-size:20px; font-weight:700; margin-bottom:4px; }
+  .subtitle { color:var(--muted); font-size:12.5px; margin-bottom:18px; }
+  .tabbar { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px; position:sticky; top:0; background:var(--bg); padding:10px 0; z-index:10; border-bottom:1px solid var(--border); }
+  .tab { border:1px solid var(--border); background:#fff; padding:7px 12px; border-radius:20px; font-size:12px; font-weight:600; cursor:pointer; color:var(--muted); }
+  .tab.active { background:#1a1a1a; color:#fff; border-color:#1a1a1a; }
+  .panel { display:none; }
+  .panel.active { display:block; }
+  .week-summary { background:#fff; border:1px solid var(--border); border-left:5px solid; border-radius:8px; padding:14px 16px; margin-bottom:16px; }
+  .week-summary h2 { font-size:17px; margin-bottom:10px; }
+  .deload-badge { background:#fdeef3; color:#c94b6e; font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; margin-left:8px; vertical-align:middle; }
+  .summary-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px 20px; }
+  .summary-grid > div { display:flex; flex-direction:column; }
+  .summary-grid .k { font-size:10.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); font-weight:700; }
+  .summary-grid .v { font-size:13px; font-weight:600; }
+  .daycard { background:var(--card); border:1px solid var(--border); border-radius:8px; margin-bottom:12px; overflow:hidden; }
+  .daycard-head { display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; color:#fff; font-weight:700; font-size:12.5px; padding:8px 12px; }
+  .dtag { font-weight:600; font-size:11px; opacity:.95; }
+  .daytable { width:100%; border-collapse:collapse; }
+  .daytable td { padding:8px 12px; vertical-align:top; font-size:12px; border-bottom:1px solid var(--border); }
+  .daytable tr:last-child td { border-bottom:none; }
+  .lbl { font-weight:700; font-size:10.5px; text-transform:uppercase; color:#888; width:90px; background:#f7f5f2; }
+  .note { color:var(--muted); font-size:11px; }
+  .footer-notes { margin-top:20px; padding:14px 16px; background:#f5f3f0; border-radius:8px; font-size:11.5px; color:var(--muted); border-left:3px solid #ccc; }
+  .footer-notes p { margin-bottom:6px; }
+</style>
+</head>
+<body>
+<h1>20-Week Training &amp; Nutrition Plan</h1>
+<p class="subtitle">Yu Jing Ng &middot; Starts Week 1 = Cycle Day 7 &middot; Bodyweight-only &middot; Meals rotate on your accepted 28-day cycle plan &middot; Calorie targets progress with weekly re-projected BMR</p>
+<div class="tabbar"><button class="tab active" onclick="showWeek(1)" id="tabbtn1">Week 1</button><button class="tab " onclick="showWeek(2)" id="tabbtn2">Week 2</button><button class="tab " onclick="showWeek(3)" id="tabbtn3">Week 3</button><button class="tab " onclick="showWeek(4)" id="tabbtn4">Week 4</button><button class="tab " onclick="showWeek(5)" id="tabbtn5">Week 5</button><button class="tab " onclick="showWeek(6)" id="tabbtn6">Week 6</button><button class="tab " onclick="showWeek(7)" id="tabbtn7">Week 7</button><button class="tab " onclick="showWeek(8)" id="tabbtn8">Week 8</button><button class="tab " onclick="showWeek(9)" id="tabbtn9">Week 9</button><button class="tab " onclick="showWeek(10)" id="tabbtn10">Week 10</button><button class="tab " onclick="showWeek(11)" id="tabbtn11">Week 11</button><button class="tab " onclick="showWeek(12)" id="tabbtn12">Week 12</button><button class="tab " onclick="showWeek(13)" id="tabbtn13">Week 13</button><button class="tab " onclick="showWeek(14)" id="tabbtn14">Week 14</button><button class="tab " onclick="showWeek(15)" id="tabbtn15">Week 15</button><button class="tab " onclick="showWeek(16)" id="tabbtn16">Week 16</button><button class="tab " onclick="showWeek(17)" id="tabbtn17">Week 17</button><button class="tab " onclick="showWeek(18)" id="tabbtn18">Week 18</button><button class="tab " onclick="showWeek(19)" id="tabbtn19">Week 19</button><button class="tab " onclick="showWeek(20)" id="tabbtn20">Week 20</button></div>
+<div class="panel active" id="week1">
+    <div class="week-summary" style="border-color:#e8a045">
+      <h2 style="color:#e8a045">Week 1</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 1 — Foundation</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Follicular</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">64.9 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1725 kcal/day (maintenance)</span></div>
+        <div><span class="k">Protein</span><span class="v">151 g</span></div>
+        <div><span class="k">Fat</span><span class="v">77 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">108 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>MONDAY</span><span class="dtag">Cycle Day 7 · Follicular</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Bodyweight squats 3x12 · Glute bridges 3x15 · Incline push-ups 3x10 · Reverse lunges 3x10/side · Bird-dog 3x10/side · Plank 3x20-30s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 8 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 9 · Follicular</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>25-30 min brisk walk, steady conversational pace — no intervals</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 10 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 11 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 12 · Follicular</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Step-ups 3x10/side · Wall/knee push-ups 3x10 · Glute bridge march 3x10/side · Squat + calf raise combo 3x12 · Side plank 2x15-20s/side · Dead bug 3x10/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 13 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week2">
+    <div class="week-summary" style="border-color:#5a9e6f">
+      <h2 style="color:#5a9e6f">Week 2</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 1 — Foundation</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Ovulation → Luteal</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">64.9 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1725 kcal/day (maintenance)</span></div>
+        <div><span class="k">Protein</span><span class="v">151 g</span></div>
+        <div><span class="k">Fat</span><span class="v">77 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">108 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>MONDAY</span><span class="dtag">Cycle Day 14 · Ovulation</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Bodyweight squats 3x12 · Glute bridges 3x15 · Incline push-ups 3x10 · Reverse lunges 3x10/side · Bird-dog 3x10/side · Plank 3x20-30s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 15 · Ovulation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 16 · Ovulation</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>25-30 min brisk walk, steady conversational pace — no intervals</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 17 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 18 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 19 · Luteal</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Step-ups 3x10/side · Wall/knee push-ups 3x10 · Glute bridge march 3x10/side · Squat + calf raise combo 3x12 · Side plank 2x15-20s/side · Dead bug 3x10/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 20 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week3">
+    <div class="week-summary" style="border-color:#6b7fd7">
+      <h2 style="color:#6b7fd7">Week 3</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 1 — Foundation</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Luteal</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">64.3 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1383 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">121 g</span></div>
+        <div><span class="k">Fat</span><span class="v">61 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">86 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>MONDAY</span><span class="dtag">Cycle Day 21 · Luteal</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Bodyweight squats 3x12 · Glute bridges 3x15 · Incline push-ups 3x10 · Reverse lunges 3x10/side · Bird-dog 3x10/side · Plank 3x20-30s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 22 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 23 · Luteal</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>25-30 min brisk walk, steady conversational pace — no intervals</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 24 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 25 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 26 · Luteal</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Step-ups 3x10/side · Wall/knee push-ups 3x10 · Glute bridge march 3x10/side · Squat + calf raise combo 3x12 · Side plank 2x15-20s/side · Dead bug 3x10/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 27 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week4">
+    <div class="week-summary" style="border-color:#6b7fd7">
+      <h2 style="color:#6b7fd7">Week 4 <span class="deload-badge">DELOAD</span></h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 1 — Foundation</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Luteal → Menstruation → Follicular</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">63.7 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1392 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">122 g</span></div>
+        <div><span class="k">Fat</span><span class="v">62 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">87 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>MONDAY</span><span class="dtag">Cycle Day 28 · Luteal</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>DELOAD — same moves, 2 sets only: Bodyweight squats 2x12 · Glute bridges 2x15 · Incline push-ups 2x10 · Reverse lunges 2x10/side · Plank 2x20s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 1 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 2 · Menstruation</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>20 min easy walk — recovery pace</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 3 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein, lactose-free — fish arrives at dinner</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 4 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — fish arrives at dinner</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 5 · Menstruation</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>DELOAD — same moves, 2 sets only: Step-ups 2x10/side · Wall push-ups 2x10 · Glute bridge march 2x10/side · Side plank 2x15s/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 6 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week5">
+    <div class="week-summary" style="border-color:#e8a045">
+      <h2 style="color:#e8a045">Week 5</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 2 — Tempo + Single-Leg</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Follicular</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">63.0 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1400 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">123 g</span></div>
+        <div><span class="k">Fat</span><span class="v">62 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">88 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>MONDAY</span><span class="dtag">Cycle Day 7 · Follicular</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Tempo squats (3-1-1) 4x12 · Single-leg glute bridge 3x8/side · Decline push-ups (feet slightly elevated) 3x10 · Walking lunges 3x10/side · Bird-dog w/ 2s hold 3x10/side · Plank 3x30-40s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 8 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 9 · Follicular</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>30 min brisk walk with 5 x 1 min faster-pace surges (low-impact, no running)</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 10 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 11 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 12 · Follicular</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Bulgarian split squat (rear foot on chair) 3x8/side · Incline push-ups (steeper) 3x12 · Single-leg glute bridge march 3x8/side · Tempo squat + calf raise 3x12 · Side plank w/ reach 2x20s/side · Dead bug slow tempo 3x12/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 13 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week6">
+    <div class="week-summary" style="border-color:#5a9e6f">
+      <h2 style="color:#5a9e6f">Week 6</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 2 — Tempo + Single-Leg</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Ovulation → Luteal</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">62.4 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1409 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">123 g</span></div>
+        <div><span class="k">Fat</span><span class="v">63 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">88 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>MONDAY</span><span class="dtag">Cycle Day 14 · Ovulation</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Tempo squats (3-1-1) 4x12 · Single-leg glute bridge 3x8/side · Decline push-ups (feet slightly elevated) 3x10 · Walking lunges 3x10/side · Bird-dog w/ 2s hold 3x10/side · Plank 3x30-40s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 15 · Ovulation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 16 · Ovulation</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>30 min brisk walk with 5 x 1 min faster-pace surges (low-impact, no running)</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 17 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 18 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 19 · Luteal</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Bulgarian split squat (rear foot on chair) 3x8/side · Incline push-ups (steeper) 3x12 · Single-leg glute bridge march 3x8/side · Tempo squat + calf raise 3x12 · Side plank w/ reach 2x20s/side · Dead bug slow tempo 3x12/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 20 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week7">
+    <div class="week-summary" style="border-color:#6b7fd7">
+      <h2 style="color:#6b7fd7">Week 7</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 2 — Tempo + Single-Leg</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Luteal</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">61.8 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1417 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">124 g</span></div>
+        <div><span class="k">Fat</span><span class="v">63 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">89 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>MONDAY</span><span class="dtag">Cycle Day 21 · Luteal</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Tempo squats (3-1-1) 4x12 · Single-leg glute bridge 3x8/side · Decline push-ups (feet slightly elevated) 3x10 · Walking lunges 3x10/side · Bird-dog w/ 2s hold 3x10/side · Plank 3x30-40s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 22 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 23 · Luteal</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>30 min brisk walk with 5 x 1 min faster-pace surges (low-impact, no running)</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 24 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 25 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 26 · Luteal</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Bulgarian split squat (rear foot on chair) 3x8/side · Incline push-ups (steeper) 3x12 · Single-leg glute bridge march 3x8/side · Tempo squat + calf raise 3x12 · Side plank w/ reach 2x20s/side · Dead bug slow tempo 3x12/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 27 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week8">
+    <div class="week-summary" style="border-color:#6b7fd7">
+      <h2 style="color:#6b7fd7">Week 8 <span class="deload-badge">DELOAD</span></h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 2 — Tempo + Single-Leg</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Luteal → Menstruation → Follicular</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">61.2 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1426 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">125 g</span></div>
+        <div><span class="k">Fat</span><span class="v">63 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">89 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>MONDAY</span><span class="dtag">Cycle Day 28 · Luteal</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>DELOAD — revert to Block 1 volume, 2 sets, no single-leg loading this week</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 1 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 2 · Menstruation</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>20-25 min easy walk — recovery pace</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 3 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein, lactose-free — fish arrives at dinner</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 4 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — fish arrives at dinner</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 5 · Menstruation</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>DELOAD — revert to Block 1 volume, 2 sets, no single-leg loading this week</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 6 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week9">
+    <div class="week-summary" style="border-color:#e8a045">
+      <h2 style="color:#e8a045">Week 9</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 3 — Density (Supersets)</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Follicular</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">60.5 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1434 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">125 g</span></div>
+        <div><span class="k">Fat</span><span class="v">64 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">90 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>MONDAY</span><span class="dtag">Cycle Day 7 · Follicular</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Superset: Squat-to-chair-tap 3x15 + Glute bridge 3x15 (45s rest) · Superset: Decline push-up 3x10 + Reverse lunge 3x10/side · Plank shoulder taps 3x20 total · Side plank 2x25s/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 8 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 9 · Follicular</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>30-35 min brisk walk with 6 x 1 min surges</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 10 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 11 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 12 · Follicular</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Superset: Step-ups 3x12/side + Single-leg glute bridge 3x10/side · Superset: Pike push-up 3x8 + Walking lunge 3x12/side · Hollow body hold 3x20s · Dead bug 3x12/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 13 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week10">
+    <div class="week-summary" style="border-color:#5a9e6f">
+      <h2 style="color:#5a9e6f">Week 10</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 3 — Density (Supersets)</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Ovulation → Luteal</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">59.9 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1443 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">126 g</span></div>
+        <div><span class="k">Fat</span><span class="v">64 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">90 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>MONDAY</span><span class="dtag">Cycle Day 14 · Ovulation</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Superset: Squat-to-chair-tap 3x15 + Glute bridge 3x15 (45s rest) · Superset: Decline push-up 3x10 + Reverse lunge 3x10/side · Plank shoulder taps 3x20 total · Side plank 2x25s/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 15 · Ovulation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 16 · Ovulation</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>30-35 min brisk walk with 6 x 1 min surges</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 17 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 18 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 19 · Luteal</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Superset: Step-ups 3x12/side + Single-leg glute bridge 3x10/side · Superset: Pike push-up 3x8 + Walking lunge 3x12/side · Hollow body hold 3x20s · Dead bug 3x12/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 20 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week11">
+    <div class="week-summary" style="border-color:#6b7fd7">
+      <h2 style="color:#6b7fd7">Week 11</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 3 — Density (Supersets)</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Luteal</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">59.3 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1451 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">127 g</span></div>
+        <div><span class="k">Fat</span><span class="v">64 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">91 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>MONDAY</span><span class="dtag">Cycle Day 21 · Luteal</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Superset: Squat-to-chair-tap 3x15 + Glute bridge 3x15 (45s rest) · Superset: Decline push-up 3x10 + Reverse lunge 3x10/side · Plank shoulder taps 3x20 total · Side plank 2x25s/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 22 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 23 · Luteal</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>30-35 min brisk walk with 6 x 1 min surges</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 24 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 25 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 26 · Luteal</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Superset: Step-ups 3x12/side + Single-leg glute bridge 3x10/side · Superset: Pike push-up 3x8 + Walking lunge 3x12/side · Hollow body hold 3x20s · Dead bug 3x12/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 27 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week12">
+    <div class="week-summary" style="border-color:#6b7fd7">
+      <h2 style="color:#6b7fd7">Week 12 <span class="deload-badge">DELOAD</span></h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 3 — Density (Supersets)</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Luteal → Menstruation → Follicular</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">58.7 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1460 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">128 g</span></div>
+        <div><span class="k">Fat</span><span class="v">65 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">91 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>MONDAY</span><span class="dtag">Cycle Day 28 · Luteal</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>DELOAD — no supersets this week, 2 sets each, full rest between: Squats 2x15 · Glute bridge 2x15 · Decline push-up 2x10</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 1 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 2 · Menstruation</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>20 min easy walk — recovery pace</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 3 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein, lactose-free — fish arrives at dinner</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 4 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — fish arrives at dinner</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 5 · Menstruation</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>DELOAD — no supersets this week, 2 sets each, full rest between: Step-ups 2x12/side · Single-leg glute bridge 2x10/side · Dead bug 2x12/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 6 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week13">
+    <div class="week-summary" style="border-color:#e8a045">
+      <h2 style="color:#e8a045">Week 13</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 4 — Strength-Endurance</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Follicular</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">58.1 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1468 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">128 g</span></div>
+        <div><span class="k">Fat</span><span class="v">65 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">92 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>MONDAY</span><span class="dtag">Cycle Day 7 · Follicular</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Box-assisted pistol squats 3x8/side · Single-leg glute bridge (2s pause top) 3x10/side · Push-up pyramid (3 max-controlled rounds) · Reverse lunge w/ pause 3x10/side · Plank 3x45-60s · Side plank reach-through 2x12/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 8 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 9 · Follicular</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>35-40 min brisk walk with 8 x 1 min surges</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 10 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 11 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 12 · Follicular</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Step-up w/ knee drive 3x10/side · Decline push-up w/ pause 3x10 · Single-leg glute bridge (elevated) 3x10/side · Squat pulse (15 reps + 5 pulses) 3x · Dead bug slow tempo 3x12/side · Hollow hold 3x25s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 13 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week14">
+    <div class="week-summary" style="border-color:#5a9e6f">
+      <h2 style="color:#5a9e6f">Week 14</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 4 — Strength-Endurance</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Ovulation → Luteal</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">57.4 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1477 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">129 g</span></div>
+        <div><span class="k">Fat</span><span class="v">66 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">92 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>MONDAY</span><span class="dtag">Cycle Day 14 · Ovulation</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Box-assisted pistol squats 3x8/side · Single-leg glute bridge (2s pause top) 3x10/side · Push-up pyramid (3 max-controlled rounds) · Reverse lunge w/ pause 3x10/side · Plank 3x45-60s · Side plank reach-through 2x12/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 15 · Ovulation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 16 · Ovulation</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>35-40 min brisk walk with 8 x 1 min surges</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 17 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 18 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 19 · Luteal</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Step-up w/ knee drive 3x10/side · Decline push-up w/ pause 3x10 · Single-leg glute bridge (elevated) 3x10/side · Squat pulse (15 reps + 5 pulses) 3x · Dead bug slow tempo 3x12/side · Hollow hold 3x25s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 20 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week15">
+    <div class="week-summary" style="border-color:#6b7fd7">
+      <h2 style="color:#6b7fd7">Week 15</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 4 — Strength-Endurance</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Luteal</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">56.8 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1485 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">130 g</span></div>
+        <div><span class="k">Fat</span><span class="v">66 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">93 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>MONDAY</span><span class="dtag">Cycle Day 21 · Luteal</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Box-assisted pistol squats 3x8/side · Single-leg glute bridge (2s pause top) 3x10/side · Push-up pyramid (3 max-controlled rounds) · Reverse lunge w/ pause 3x10/side · Plank 3x45-60s · Side plank reach-through 2x12/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 22 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 23 · Luteal</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>35-40 min brisk walk with 8 x 1 min surges</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 24 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 25 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 26 · Luteal</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Step-up w/ knee drive 3x10/side · Decline push-up w/ pause 3x10 · Single-leg glute bridge (elevated) 3x10/side · Squat pulse (15 reps + 5 pulses) 3x · Dead bug slow tempo 3x12/side · Hollow hold 3x25s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 27 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week16">
+    <div class="week-summary" style="border-color:#6b7fd7">
+      <h2 style="color:#6b7fd7">Week 16 <span class="deload-badge">DELOAD</span></h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 4 — Strength-Endurance</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Luteal → Menstruation → Follicular</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">56.2 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1493 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">131 g</span></div>
+        <div><span class="k">Fat</span><span class="v">66 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">93 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>MONDAY</span><span class="dtag">Cycle Day 28 · Luteal</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>DELOAD — revert to Block 2 volume/tempo, 2-3 sets, remove pistol squat regression this week</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 1 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 2 · Menstruation</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>25 min easy walk — recovery pace</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 3 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein, lactose-free — fish arrives at dinner</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 4 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — fish arrives at dinner</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 5 · Menstruation</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>DELOAD — revert to Block 2 volume/tempo, 2-3 sets, remove pistol squat regression this week</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 6 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week17">
+    <div class="week-summary" style="border-color:#e8a045">
+      <h2 style="color:#e8a045">Week 17</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 5 — Peak Combination</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Follicular</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">55.6 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1502 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">131 g</span></div>
+        <div><span class="k">Fat</span><span class="v">67 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">94 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>MONDAY</span><span class="dtag">Cycle Day 7 · Follicular</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Tempo pistol squat regression 3x8/side · Single-leg glute bridge w/ pause 3x10/side · Decline push-up tempo 3x10 · Walking lunge tempo 3x10/side · Plank 3x60s · Side plank w/ leg lift 2x15/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 8 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 9 · Follicular</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>35 min steady walk, no surges this week</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 10 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 11 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 12 · Follicular</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Superset combos from Blocks 2-4 at moderate volume — choose your 2 strongest single-leg + 2 strongest push variations, 3x10 each</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#e8a045">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 13 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week18">
+    <div class="week-summary" style="border-color:#5a9e6f">
+      <h2 style="color:#5a9e6f">Week 18</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 5 — Peak Combination</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Ovulation → Luteal</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">54.9 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1510 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">132 g</span></div>
+        <div><span class="k">Fat</span><span class="v">67 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">94 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>MONDAY</span><span class="dtag">Cycle Day 14 · Ovulation</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Tempo pistol squat regression 3x8/side · Single-leg glute bridge w/ pause 3x10/side · Decline push-up tempo 3x10 · Walking lunge tempo 3x10/side · Plank 3x60s · Side plank w/ leg lift 2x15/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 15 · Ovulation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 16 · Ovulation</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>35 min steady walk, no surges this week</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Peak energy · extra cruciferous for estrogen clearance</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 17 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 18 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 19 · Luteal</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Superset combos from Blocks 2-4 at moderate volume — choose your 2 strongest single-leg + 2 strongest push variations, 3x10 each</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#5a9e6f">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 20 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week19">
+    <div class="week-summary" style="border-color:#6b7fd7">
+      <h2 style="color:#6b7fd7">Week 19</h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 5 — Peak Combination</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Luteal</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">54.3 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1519 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">133 g</span></div>
+        <div><span class="k">Fat</span><span class="v">68 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">95 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>MONDAY</span><span class="dtag">Cycle Day 21 · Luteal</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Tempo pistol squat regression 3x8/side · Single-leg glute bridge w/ pause 3x10/side · Decline push-up tempo 3x10 · Walking lunge tempo 3x10/side · Plank 3x60s · Side plank w/ leg lift 2x15/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 22 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 23 · Luteal</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>35 min steady walk, no surges this week</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Carbs toward lower end of your range · protect recovery</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 24 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 25 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — no fish at lunch today</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 26 · Luteal</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Superset combos from Blocks 2-4 at moderate volume — choose your 2 strongest single-leg + 2 strongest push variations, 3x10 each</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 27 · Luteal</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div><div class="panel " id="week20">
+    <div class="week-summary" style="border-color:#6b7fd7">
+      <h2 style="color:#6b7fd7">Week 20 <span class="deload-badge">DELOAD</span></h2>
+      <div class="summary-grid">
+        <div><span class="k">Training Block</span><span class="v">Block 5 — Taper / Retest Week</span></div>
+        <div><span class="k">Cycle Phase</span><span class="v">Luteal → Menstruation → Follicular</span></div>
+        <div><span class="k">Est. Weight</span><span class="v">53.7 kg</span></div>
+        <div><span class="k">Calorie Target</span><span class="v">1527 kcal/day (deficit)</span></div>
+        <div><span class="k">Protein</span><span class="v">134 g</span></div>
+        <div><span class="k">Fat</span><span class="v">68 g</span></div>
+        <div><span class="k">Carbs</span><span class="v">95 g</span></div>
+      </div>
+    </div>
+    
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>MONDAY</span><span class="dtag">Cycle Day 28 · Luteal</span><span class="dtag">RESISTANCE A</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>TAPER — light session, ~40% volume: Bodyweight squats 2x10 · Glute bridge 2x10 · Incline push-up 2x8 · Plank 2x30s</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Salmon poke bowl — salmon, cucumber, edamame, seaweed, extra edamame instead of a grain base, light sesame-soy dressing</b><br><span class="note">Omega-3 EPA + iodine from seaweed</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Grilled fish of choice, large cruciferous veg portion, chickpeas, seasoning your call</b><br><span class="note">PMS peak window · tightest carb control · magnesium highest-leverage</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Nuts or seeds</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>TUESDAY</span><span class="dtag">Cycle Day 1 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Baked salmon, lemon-garlic herb crust, extra roasted cauliflower and broccoli</b><br><span class="note">Omega-3 EPA from salmon</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Herb-crusted chicken thigh, cauliflower mash, side salad, olive oil vinaigrette</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Walnuts + cucumber sticks</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>WEDNESDAY</span><span class="dtag">Cycle Day 2 · Menstruation</span><span class="dtag">CARDIO</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>20 min easy walk. Schedule your InBody retest this week — same time of day, fasted, similarly hydrated to 29.07.26 for a clean comparison.</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Steamed mackerel with ginger and scallion, stir-fried kai lan, cauliflower rice with chickpeas</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef and broccoli stir-fry (light soy, ginger, garlic), shiitake mushrooms</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Boiled edamame, pinch of sea salt</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>THURSDAY</span><span class="dtag">Cycle Day 3 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken Caesar-style salad, anchovy-lemon dressing, crushed almonds</b><br><span class="note">Lean protein, lactose-free — fish arrives at dinner</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Baked mackerel Provençal-style (tomato, olive, herbs), roasted brussels sprouts</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Celery + almond butter</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>FRIDAY</span><span class="dtag">Cycle Day 4 · Menstruation</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Seared tuna, edamame, cucumber sunomono, small chickpea portion instead of rice</b><br><span class="note">Lean protein — fish arrives at dinner</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Salmon teriyaki (low-sodium tamari, no sugar), sautéed bok choy</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Mixed nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SATURDAY</span><span class="dtag">Cycle Day 5 · Menstruation</span><span class="dtag">RESISTANCE B</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>TAPER — light session, ~40% volume: Step-ups 2x8/side · Single-leg glute bridge 2x8/side · Side plank 2x15s/side</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled chicken thigh, cauliflower “rice” pilaf-style with herbs, steamed broccoli</b><br><span class="note">No fish today — take EPA capsule</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Beef stir-fry, Western-seasoned (garlic, rosemary, black pepper), side salad</b><br><span class="note">Lower-intensity training day · magnesium for cramping</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Hard-boiled egg or edamame</td></tr>
+            <tr><td class="lbl">Supplements</td><td>Omega-3 EPA capsule (no salmon/mackerel at lunch) · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div>
+        <div class="daycard">
+          <div class="daycard-head" style="background:#6b7fd7">
+            <span>SUNDAY</span><span class="dtag">Cycle Day 6 · Follicular</span><span class="dtag">REST</span>
+          </div>
+          <table class="daytable">
+            <tr><td class="lbl">Training</td><td>Rest day</td></tr>
+            <tr><td class="lbl">Lunch</td><td><b>Grilled mackerel with sambal (chili to your tolerance), cabbage and cucumber salad</b><br><span class="note">Omega-3 EPA from mackerel · cruciferous</span></td></tr>
+            <tr><td class="lbl">Dinner</td><td><b>Chicken curry, coconut milk base, no added sugar, extra cauliflower rice instead of rice</b><br><span class="note">Good window for harder training · slightly more carb room</span></td></tr>
+            <tr><td class="lbl">Snack</td><td>Pistachios + macadamia nuts</td></tr>
+            <tr><td class="lbl">Supplements</td><td>EPA — covered by lunch, skip capsule · Magnesium Glycinate 300mg (bed) · CoQ10 100mg (with lunch)</td></tr>
+          </table>
+        </div></div>
+<div class="footer-notes">
+  <p><b>How this was built:</b> Meals repeat on your existing 28-day rotation every 4 weeks (Weeks 1/5/9/13/17, 2/6/10/14/18, 3/7/11/15/19, 4/8/12/16/20 share the same dishes) &mdash; only calorie/macro targets and training change week to week.</p>
+  <p><b>Deficit:</b> Weeks 1-2 at maintenance (no deficit) to establish adherence. From Week 3, a 350 kcal/day deficit is applied, re-based weekly against a re-projected BMR as estimated lean mass rises.</p>
+  <p><b>Training:</b> 5 blocks of 4 weeks each, bodyweight-only. Every 4th week is a deload (or taper/retest in Week 20) &mdash; do not skip these given lower recovery efficiency and elevated stress fracture risk.</p>
+  <p><b>Retest:</b> Get a fresh InBody scan at the end of Week 20, ideally same conditions (morning, fasted) as your 29.07.26 scan, to check actual vs. projected numbers and re-plan the next 20 weeks from real data.</p>
+  <p>Not medical advice. Review supplement doses and this plan with a doctor or registered dietitian, especially before increasing deficit size or training intensity further.</p>
+</div>
+<script>
+function showWeek(n) {
+  for (let i=1;i<=20;i++) {
+    document.getElementById('week'+i).classList.remove('active');
+    document.getElementById('tabbtn'+i).classList.remove('active');
+  }
+  document.getElementById('week'+n).classList.add('active');
+  document.getElementById('tabbtn'+n).classList.add('active');
+  window.scrollTo({top:0, behavior:'instant'});
+}
+</script>
+</body>
+</html>
