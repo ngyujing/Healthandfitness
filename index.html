@@ -24,9 +24,19 @@
   body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:var(--bg); color:var(--text); padding:20px 14px 60px; font-size:13px; line-height:1.5; }
   h1 { font-size:20px; font-weight:700; margin-bottom:4px; }
   .subtitle { color:var(--muted); font-size:12.5px; margin-bottom:18px; }
-  .tabbar { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px; position:sticky; top:0; background:var(--bg); padding:10px 0; z-index:10; border-bottom:1px solid var(--border); }
+  .navsticky { position:sticky; top:0; background:var(--bg); padding:10px 0; z-index:10; border-bottom:1px solid var(--border); margin-bottom:20px; }
+  .phasebar { display:flex; gap:6px; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:8px; }
+  .phase { border:1px solid var(--border); background:#fff; padding:6px 10px; border-radius:10px; font-size:11px; font-weight:700; cursor:pointer; color:var(--muted); display:flex; flex-direction:column; align-items:center; gap:1px; white-space:nowrap; flex-shrink:0; }
+  .phase .prange { font-size:9px; font-weight:600; color:var(--muted); opacity:.75; }
+  .phase.active { background:#1a1a1a; color:#fff; border-color:#1a1a1a; }
+  .phase.active .prange { color:#fff; opacity:.8; }
+  .phase-name { font-size:11px; color:var(--muted); font-weight:700; margin:2px 2px 6px; text-transform:uppercase; letter-spacing:.03em; }
+  .weekrow { display:flex; align-items:center; gap:6px; }
+  .tabbar { display:flex; flex-wrap:wrap; gap:6px; flex:1; }
   .tab { border:1px solid var(--border); background:#fff; padding:7px 12px; border-radius:20px; font-size:12px; font-weight:600; cursor:pointer; color:var(--muted); }
   .tab.active { background:#1a1a1a; color:#fff; border-color:#1a1a1a; }
+  .navbtn { border:1px solid var(--border); background:#fff; width:30px; height:30px; min-width:30px; border-radius:50%; font-size:15px; font-weight:700; cursor:pointer; color:var(--text); flex-shrink:0; }
+  .navbtn:disabled { opacity:.3; cursor:default; }
   .panel { display:none; }
   .panel.active { display:block; }
   .week-summary { background:#fff; border:1px solid var(--border); border-left:5px solid; border-radius:8px; padding:14px 16px; margin-bottom:16px; }
@@ -51,7 +61,15 @@
 <body>
 <h1>20-Week Training &amp; Nutrition Plan</h1>
 <p class="subtitle">Yu Jing Ng &middot; Starts Week 1 = Cycle Day 7 &middot; Bodyweight-only &middot; Meals rotate on your accepted 28-day cycle plan &middot; Calorie targets progress with weekly re-projected BMR</p>
-<div class="tabbar"><button class="tab active" onclick="showWeek(1)" id="tabbtn1">Week 1</button><button class="tab " onclick="showWeek(2)" id="tabbtn2">Week 2</button><button class="tab " onclick="showWeek(3)" id="tabbtn3">Week 3</button><button class="tab " onclick="showWeek(4)" id="tabbtn4">Week 4</button><button class="tab " onclick="showWeek(5)" id="tabbtn5">Week 5</button><button class="tab " onclick="showWeek(6)" id="tabbtn6">Week 6</button><button class="tab " onclick="showWeek(7)" id="tabbtn7">Week 7</button><button class="tab " onclick="showWeek(8)" id="tabbtn8">Week 8</button><button class="tab " onclick="showWeek(9)" id="tabbtn9">Week 9</button><button class="tab " onclick="showWeek(10)" id="tabbtn10">Week 10</button><button class="tab " onclick="showWeek(11)" id="tabbtn11">Week 11</button><button class="tab " onclick="showWeek(12)" id="tabbtn12">Week 12</button><button class="tab " onclick="showWeek(13)" id="tabbtn13">Week 13</button><button class="tab " onclick="showWeek(14)" id="tabbtn14">Week 14</button><button class="tab " onclick="showWeek(15)" id="tabbtn15">Week 15</button><button class="tab " onclick="showWeek(16)" id="tabbtn16">Week 16</button><button class="tab " onclick="showWeek(17)" id="tabbtn17">Week 17</button><button class="tab " onclick="showWeek(18)" id="tabbtn18">Week 18</button><button class="tab " onclick="showWeek(19)" id="tabbtn19">Week 19</button><button class="tab " onclick="showWeek(20)" id="tabbtn20">Week 20</button></div>
+<div class="navsticky">
+  <div class="phasebar" id="phasebar"></div>
+  <div class="phase-name" id="phaseName"></div>
+  <div class="weekrow">
+    <button class="navbtn" id="prevBtn" onclick="stepWeek(-1)" aria-label="Previous week">‹</button>
+    <div class="tabbar" id="tabbar"></div>
+    <button class="navbtn" id="nextBtn" onclick="stepWeek(1)" aria-label="Next week">›</button>
+  </div>
+</div>
 <div class="panel active" id="week1">
     <div class="week-summary" style="border-color:#e8a045">
       <h2 style="color:#e8a045">Week 1</h2>
@@ -2001,15 +2019,88 @@
   <p>Not medical advice. Review supplement doses and this plan with a doctor or registered dietitian, especially before increasing deficit size or training intensity further.</p>
 </div>
 <script>
+const PHASES = [
+  {n:1, name:'Foundation', weeks:[1,2,3,4]},
+  {n:2, name:'Tempo + Single-Leg', weeks:[5,6,7,8]},
+  {n:3, name:'Density (Supersets)', weeks:[9,10,11,12]},
+  {n:4, name:'Strength-Endurance', weeks:[13,14,15,16]},
+  {n:5, name:'Peak Combination', weeks:[17,18,19,20]},
+];
+const LS_KEY = 'planCurrentWeek';
+let currentWeek = 1;
+let activePhase = null;
+
+function weekToPhase(n) {
+  return PHASES.find(p => p.weeks.includes(n));
+}
+
+function buildPhaseBar() {
+  document.getElementById('phasebar').innerHTML = PHASES.map(p =>
+    `<button class="phase" id="phasebtn${p.n}" onclick="selectPhase(${p.n})">Phase ${p.n}<span class="prange">Wk ${p.weeks[0]}-${p.weeks[p.weeks.length-1]}</span></button>`
+  ).join('');
+}
+
+function renderWeekRow(phaseNum) {
+  const phase = PHASES.find(p => p.n === phaseNum);
+  document.getElementById('phaseName').textContent = `Block ${phase.n} — ${phase.name}`;
+  document.getElementById('tabbar').innerHTML = phase.weeks.map(w =>
+    `<button class="tab" id="tabbtn${w}" onclick="showWeek(${w})">Week ${w}</button>`
+  ).join('');
+}
+
+function selectPhase(n, keepWeek) {
+  activePhase = n;
+  document.querySelectorAll('.phase').forEach(el => el.classList.remove('active'));
+  document.getElementById('phasebtn'+n).classList.add('active');
+  renderWeekRow(n);
+  if (keepWeek) {
+    highlightWeekBtn(currentWeek);
+  } else {
+    const phase = PHASES.find(p => p.n === n);
+    showWeek(phase.weeks[0]);
+  }
+}
+
+function highlightWeekBtn(n) {
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  const btn = document.getElementById('tabbtn'+n);
+  if (btn) btn.classList.add('active');
+}
+
 function showWeek(n) {
+  currentWeek = n;
   for (let i=1;i<=20;i++) {
     document.getElementById('week'+i).classList.remove('active');
-    document.getElementById('tabbtn'+i).classList.remove('active');
   }
   document.getElementById('week'+n).classList.add('active');
-  document.getElementById('tabbtn'+n).classList.add('active');
+  const phase = weekToPhase(n);
+  if (activePhase !== phase.n) {
+    selectPhase(phase.n, true);
+  } else {
+    highlightWeekBtn(n);
+  }
+  document.getElementById('prevBtn').disabled = n <= 1;
+  document.getElementById('nextBtn').disabled = n >= 20;
+  try { localStorage.setItem(LS_KEY, String(n)); } catch (e) {}
   window.scrollTo({top:0, behavior:'instant'});
 }
+
+function stepWeek(delta) {
+  const next = currentWeek + delta;
+  if (next >= 1 && next <= 20) showWeek(next);
+}
+
+function init() {
+  buildPhaseBar();
+  let saved = 1;
+  try {
+    const parsed = parseInt(localStorage.getItem(LS_KEY), 10);
+    if (parsed >= 1 && parsed <= 20) saved = parsed;
+  } catch (e) {}
+  showWeek(saved);
+}
+
+init();
 </script>
 </body>
 </html>
